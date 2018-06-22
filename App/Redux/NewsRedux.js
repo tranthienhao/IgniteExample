@@ -1,0 +1,69 @@
+import { createReducer, createActions } from 'reduxsauce'
+import Immutable from 'seamless-immutable'
+
+/* ------------- Types and Action Creators ------------- */
+
+const { Types, Creators } = createActions({
+  newsRequest: ['topic','page'],
+  newsSuccess: ['listNews'],
+  newsFailure: null,
+  page2Request: ['topic', 'page'],
+  page2Success: ['page2List'],
+  page2Failure: null
+})
+
+export const NewsTypes = Types
+export default Creators
+
+/* ------------- Initial State ------------- */
+
+export const INITIAL_STATE = Immutable({
+  fetching: null,
+  listNews: [],
+  page2List: [],
+  error: null
+})
+
+/* ------------- Selectors ------------- */
+
+export const NewsSelectors = {
+  getData: state => state.data
+}
+
+/* ------------- Reducers ------------- */
+
+// request the data from an api
+export const request = (state) =>
+  state.merge({ fetching: true })
+
+// successful api lookup
+export const success = (state, action) => {
+  const { listNews } = action
+  return state.merge({ fetching: false, error: null, listNews })
+}
+
+// Something went wrong somewhere.
+export const failure = state =>
+  state.merge({ fetching: false, error: true, listNews: [] })
+
+
+// successful api lookup
+export const page2success = (state, action) => {
+  const { page2List } = action
+  return state.merge({ fetching: false, error: null, page2List })
+}
+
+// Something went wrong somewhere.
+export const page2failure = state =>
+  state.merge({ fetching: false, error: true, page2List: [] })
+
+/* ------------- Hookup Reducers To Types ------------- */
+
+export const reducer = createReducer(INITIAL_STATE, {
+  [Types.NEWS_REQUEST]: request,
+  [Types.NEWS_SUCCESS]: success,
+  [Types.NEWS_FAILURE]: failure,
+  [Types.PAGE2_REQUEST]: request,
+  [Types.PAGE2_SUCCESS]: page2success,
+  [Types.PAGE2_FAILURE]: page2failure,
+})
