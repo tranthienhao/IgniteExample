@@ -78,7 +78,7 @@ class NewsScreen extends React.Component {
           onEndReached={this.loadMore.bind(this)}
           onEndReachedThreshold= {1}
         />
-        <Text style = {styles.label}>{JSON.stringify(this.props.listNews)}</Text>
+        <Text style = {styles.label}>{JSON.stringify(this.state.page)}</Text>
       </View>
     )
   }
@@ -95,7 +95,7 @@ class NewsScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    listNews: state.news,
+    listNews: state.news.listNews,
     fetching: state.news.fetching
   }
 }

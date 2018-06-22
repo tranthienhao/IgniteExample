@@ -78,7 +78,7 @@ class Page2Screen extends Component {
           onEndReached={this.loadMore.bind(this)}
           onEndReachedThreshold= {1}
         />
-        <Text style = {styles.label}>{JSON.stringify(this.props.listNews)}</Text>
+        <Text style = {styles.label}>{JSON.stringify(this.state.page)}</Text>
       </View>
     )
   }
