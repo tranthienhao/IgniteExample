@@ -6,10 +6,10 @@ import Immutable from 'seamless-immutable'
 const { Types, Creators } = createActions({
   newsRequest: ['topic','page'],
   newsSuccess: ['listNews'],
-  newsFailure: ['problem'],
+  newsFailure: ['propblem'],
   page2Request: ['topic', 'page'],
   page2Success: ['page2List'],
-  page2Failure: ['problem']
+  page2Failure: null
 })
 
 export const NewsTypes = Types
@@ -58,8 +58,8 @@ export const page2success = (state, action) => {
 }
 
 // Something went wrong somewhere.
-export const page2failure = (state, {problem}) =>
-   state.merge({ fetching: false, error: problem, listNews: [] })
+export const page2failure = state =>
+  state.merge({ fetching2: false, error: true, page2List: [] })
 
 /* ------------- Hookup Reducers To Types ------------- */
 

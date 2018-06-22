@@ -58,7 +58,7 @@ export const page2success = (state, action) => {
 }
 
 // Something went wrong somewhere.
-export const page2failure = (state, {problem}) =>
+export const page2failure = state =>
    state.merge({ fetching: false, error: problem, listNews: [] })
 
 /* ------------- Hookup Reducers To Types ------------- */

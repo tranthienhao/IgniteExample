@@ -9,7 +9,7 @@ import StartupActions from '../Redux/StartupRedux'
 import styles from './Styles/RootContainerStyles'
 
 class RootContainer extends Component {
-  componentWillMount () {
+  componentDidMount () {
     this.props.startup()
   }
 

@@ -3,6 +3,6 @@ import { Colors } from '../../Themes/'
 
 export default StyleSheet.create({
   header: {
-    backgroundColor: '#FAFAFA'
+    backgroundColor: Colors.backgroundColor
   }
 })

@@ -23,6 +23,6 @@ export function* getPage2(api, action) {
     // located in ../Transforms/. Otherwise, just pass the data back from the api.
     yield put(NewsActions.page2Success(response.data))
   } else {
-    yield put(NewsActions.page2Failure(response.problem))
+    yield put(NewsActions.page2Failure())
   }
 }
