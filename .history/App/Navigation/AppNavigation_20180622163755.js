@@ -45,9 +45,6 @@ const PrimaryNav = StackNavigator({
         inactiveTintColor: 'gray',
         showIcon: true,
         upperCaseLabel: false,
-        indicatorStyle: {
-          opacity: 0
-        },
         style: {
           backgroundColor: 'white',
           height: 56,

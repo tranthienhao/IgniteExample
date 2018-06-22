@@ -21,7 +21,7 @@ const PrimaryNav = StackNavigator({
       navigationOptions: {
         header: props =>
         <View style={styles.header}>
-          <Header{...props}></Header>
+          <Text>NEWS FEED</Text>
         </View>,
         headerTitleStyle: { color: 'tomato', textAlign: 'center', alignSelf: 'center'},
         headerTitle: "NEWS FEED",
@@ -62,6 +62,12 @@ const PrimaryNav = StackNavigator({
   },
   NewsDetailScreen: { screen: NewsDetailScreen,
   navigationOptions: ({navigation}) => ({
+    header: props =>
+      <View style={styles.header}>
+        <Text>NEWS</Text>
+      </View>,
+    headerBackTitle:null,
+    headerStyle: styles.header,
     headerTitle: "NEWS",
     headerTintColor: 'tomato',
     headerTitleStyle: { color: 'tomato', textAlign: 'center'},

@@ -11,7 +11,7 @@ export default StyleSheet.create({
     // shadowOffset:{  height: 1,  },
     // shadowColor: 'black',
     // shadowOpacity: .3,
-    elevation: 1,
+    // elevation: 1,
   },
   icon: {
     height: 25,

@@ -4,8 +4,7 @@ import NewsDetailScreen from '../Containers/NewsDetailScreen'
 import NewsScreen from '../Containers/NewsScreen'
 import Page2Screen from '../Containers/Page2Screen'
 import styles from './Styles/NavigationStyles'
-import {View, Text, Image, Platform} from 'react-native'
-import { Header } from 'react-navigation'
+import {Image} from 'react-native'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
@@ -19,22 +18,18 @@ const PrimaryNav = StackNavigator({
       }
     }, {
       navigationOptions: {
-        header: props =>
-        <View style={styles.header}>
-          <Header{...props}></Header>
-        </View>,
-        headerTitleStyle: { color: 'tomato', textAlign: 'center', alignSelf: 'center'},
         headerTitle: "NEWS FEED",
-        headerBackTitle:null,
+        headerTitleStyle: { color: 'tomato', justifyContent: 'center'},
         headerStyle: styles.header,
+        backTitle: null,
         tabBarIcon: ({ focused,tintColor }) => (
           focused ? <Image
-              source={require('../Images/Icons/icon-api-testing.png')}
+              source={require('../Images/Icons/faq-icon.png')}
               style={[styles.icon, {tintColor: tintColor}]}
             />
             :
             <Image
-              source={require('../Images/Icons/icon-api-testing.png')}
+              source={require('../Images/Icons/faq-icon.png')}
               style={[styles.icon, {tintColor: tintColor}]}
             />
         ),
@@ -43,17 +38,8 @@ const PrimaryNav = StackNavigator({
       tabBarOptions: {
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
-        showIcon: true,
-        upperCaseLabel: false,
-        indicatorStyle: {
-          opacity: 0
-        },
         style: {
           backgroundColor: 'white',
-          height: 56,
-        },
-        labelStyle: {
-          fontSize: 12,
         },
       },
       animationEnabled: true,
@@ -63,15 +49,15 @@ const PrimaryNav = StackNavigator({
   NewsDetailScreen: { screen: NewsDetailScreen,
   navigationOptions: ({navigation}) => ({
     headerTitle: "NEWS",
-    headerTintColor: 'tomato',
-    headerTitleStyle: { color: 'tomato', textAlign: 'center'},
+    headerTintColor: 'black',
+    headerTitleStyle: { color: 'tomato', justifyContent: 'center'}
   }), },
 }, {
   // Default config for all screens
   headerMode: 'float',
   initialRouteName: 'Home',
   navigationOptions: {
-    headerStyle: styles.header,
+    headerStyle: styles.header
   }
 })
 

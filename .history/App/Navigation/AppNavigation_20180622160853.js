@@ -19,22 +19,19 @@ const PrimaryNav = StackNavigator({
       }
     }, {
       navigationOptions: {
-        header: props =>
-        <View style={styles.header}>
-          <Header{...props}></Header>
-        </View>,
-        headerTitleStyle: { color: 'tomato', textAlign: 'center', alignSelf: 'center'},
+        header: props => <View style= {styles.header}> <Text>asdasd</Text>/></View>,
+        // headerTitleStyle: { color: 'tomato', textAlign: 'center', alignSelf: 'center'},
         headerTitle: "NEWS FEED",
         headerBackTitle:null,
         headerStyle: styles.header,
         tabBarIcon: ({ focused,tintColor }) => (
           focused ? <Image
-              source={require('../Images/Icons/icon-api-testing.png')}
+              source={require('../Images/Icons/faq-icon.png')}
               style={[styles.icon, {tintColor: tintColor}]}
             />
             :
             <Image
-              source={require('../Images/Icons/icon-api-testing.png')}
+              source={require('../Images/Icons/faq-icon.png')}
               style={[styles.icon, {tintColor: tintColor}]}
             />
         ),
@@ -43,17 +40,8 @@ const PrimaryNav = StackNavigator({
       tabBarOptions: {
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
-        showIcon: true,
-        upperCaseLabel: false,
-        indicatorStyle: {
-          opacity: 0
-        },
         style: {
           backgroundColor: 'white',
-          height: 56,
-        },
-        labelStyle: {
-          fontSize: 12,
         },
       },
       animationEnabled: true,
@@ -63,7 +51,7 @@ const PrimaryNav = StackNavigator({
   NewsDetailScreen: { screen: NewsDetailScreen,
   navigationOptions: ({navigation}) => ({
     headerTitle: "NEWS",
-    headerTintColor: 'tomato',
+    headerTintColor: 'black',
     headerTitleStyle: { color: 'tomato', textAlign: 'center'},
   }), },
 }, {

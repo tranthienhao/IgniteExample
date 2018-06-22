@@ -44,16 +44,11 @@ const PrimaryNav = StackNavigator({
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
         showIcon: true,
-        upperCaseLabel: false,
-        indicatorStyle: {
-          opacity: 0
-        },
         style: {
           backgroundColor: 'white',
-          height: 56,
         },
         labelStyle: {
-          fontSize: 12,
+          fontSize: 30,
         },
       },
       animationEnabled: true,

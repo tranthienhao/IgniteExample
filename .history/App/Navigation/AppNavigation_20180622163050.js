@@ -29,12 +29,12 @@ const PrimaryNav = StackNavigator({
         headerStyle: styles.header,
         tabBarIcon: ({ focused,tintColor }) => (
           focused ? <Image
-              source={require('../Images/Icons/icon-api-testing.png')}
+              source={require('../Images/Icons/icon-components@2x.png')}
               style={[styles.icon, {tintColor: tintColor}]}
             />
             :
             <Image
-              source={require('../Images/Icons/icon-api-testing.png')}
+              source={require('../Images/Icons/icon-components@2x.png')}
               style={[styles.icon, {tintColor: tintColor}]}
             />
         ),
@@ -44,16 +44,8 @@ const PrimaryNav = StackNavigator({
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
         showIcon: true,
-        upperCaseLabel: false,
-        indicatorStyle: {
-          opacity: 0
-        },
         style: {
           backgroundColor: 'white',
-          height: 56,
-        },
-        labelStyle: {
-          fontSize: 12,
         },
       },
       animationEnabled: true,

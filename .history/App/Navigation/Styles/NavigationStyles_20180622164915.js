@@ -5,13 +5,8 @@ export default StyleSheet.create({
   header: {
     backgroundColor: '#FAFAFA',
     height: 56,
-    // marginTop: Platform.OS == "ios" ? 20 : 0,
     // justifyContent: 'center',
-    // alignItems: 'center',
-    // shadowOffset:{  height: 1,  },
-    // shadowColor: 'black',
-    // shadowOpacity: .3,
-    elevation: 1,
+    // alignItems: 'center'
   },
   icon: {
     height: 25,

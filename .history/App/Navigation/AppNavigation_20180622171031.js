@@ -21,7 +21,7 @@ const PrimaryNav = StackNavigator({
       navigationOptions: {
         header: props =>
         <View style={styles.header}>
-          <Header{...props}></Header>
+          <Text>NEWS FEED</Text>
         </View>,
         headerTitleStyle: { color: 'tomato', textAlign: 'center', alignSelf: 'center'},
         headerTitle: "NEWS FEED",
@@ -62,6 +62,27 @@ const PrimaryNav = StackNavigator({
   },
   NewsDetailScreen: { screen: NewsDetailScreen,
   navigationOptions: ({navigation}) => ({
+    header: props =>
+        <View style={styles.header}>
+          <Text>NEWS</Text>
+        </View>,
+        headerTitleStyle: { color: 'tomato', textAlign: 'center', alignSelf: 'center'},
+        headerTitle: "NEWS FEED",
+        headerBackTitle:null,
+        headerStyle: styles.header,
+        tabBarIcon: ({ focused,tintColor }) => (
+          focused ? <Image
+              source={require('../Images/Icons/icon-api-testing.png')}
+              style={[styles.icon, {tintColor: tintColor}]}
+            />
+            :
+            <Image
+              source={require('../Images/Icons/icon-api-testing.png')}
+              style={[styles.icon, {tintColor: tintColor}]}
+            />
+        ),
+      },
+    ),
     headerTitle: "NEWS",
     headerTintColor: 'tomato',
     headerTitleStyle: { color: 'tomato', textAlign: 'center'},

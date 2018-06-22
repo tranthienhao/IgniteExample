@@ -6,7 +6,7 @@ export default StyleSheet.create({
     backgroundColor: '#FAFAFA',
     height: 56,
     // marginTop: Platform.OS == "ios" ? 20 : 0,
-    // justifyContent: 'center',
+    justifyContent: 'center',
     // alignItems: 'center',
     // shadowOffset:{  height: 1,  },
     // shadowColor: 'black',

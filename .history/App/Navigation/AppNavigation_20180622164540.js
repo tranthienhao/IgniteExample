@@ -21,7 +21,7 @@ const PrimaryNav = StackNavigator({
       navigationOptions: {
         header: props =>
         <View style={styles.header}>
-          <Header{...props}></Header>
+          <Text>asdasd</Text>
         </View>,
         headerTitleStyle: { color: 'tomato', textAlign: 'center', alignSelf: 'center'},
         headerTitle: "NEWS FEED",
