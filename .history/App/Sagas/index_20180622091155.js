@@ -11,8 +11,7 @@ import { NewsTypes } from '../Redux/NewsRedux'
 /* ------------- Sagas ------------- */
 
 import { startup } from './StartupSagas'
-import { getNews, getPage2 } from './NewsSagas'
-
+import { getNews } from './NewsSagas'
 
 /* ------------- API ------------- */
 
@@ -29,6 +28,6 @@ export default function * root () {
 
     // some sagas receive extra parameters in addition to an action
     takeLatest(NewsTypes.NEWS_REQUEST, getNews, api),
-    // takeLatest(NewsTypes.PAGE2_REQUEST, getPage2, api)
+    takeLatest(NewsTypes.PAGE2_REQUEST, getPage2, api)
   ])
 }

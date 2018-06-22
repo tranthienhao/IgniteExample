@@ -83,7 +83,7 @@ class NewsScreen extends React.Component {
     )
   }
   componentDidMount(){
-    this.props.getNews(this.state.topic, this.state.page)
+    this.props.getNews(1, this.state.page)
     this.setState({ page: this.state.page + 1 })
   }
   componentDidUpdate(prevProps) {
@@ -95,7 +95,7 @@ class NewsScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    listNews: state.news,
+    listNews: state.news.listNews,
     fetching: state.news.fetching
   }
 }

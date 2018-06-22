@@ -54,7 +54,7 @@ class NewsScreen extends React.Component {
   }
   onRefresh(){
     this.setState({refreshing: true, page: 2, listNews: []})
-    this.props.getNews(this.state.topic, 1)
+    this.props.getNews(1, 1)
     this.setState({refreshing: false})
   }
 
@@ -95,7 +95,7 @@ class NewsScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    listNews: state.news,
+    listNews: state.news.listNews,
     fetching: state.news.fetching
   }
 }

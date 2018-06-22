@@ -12,9 +12,9 @@ const PrimaryNav = StackNavigator({
       'Page1 Screen': {
         screen: NewsScreen
       },
-      // 'Page2 Screen': {
-      //   screen: Page2Screen
-      // }
+      'Page2 Screen': {
+        screen: Page2Screen
+      }
     }, {
       tabBarPosition: "bottom"
     })

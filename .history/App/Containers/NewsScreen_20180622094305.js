@@ -95,7 +95,7 @@ class NewsScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    listNews: state.news,
+    listNews: state.news.listNews,
     fetching: state.news.fetching
   }
 }

@@ -7,9 +7,9 @@ const { Types, Creators } = createActions({
   newsRequest: ['topic','page'],
   newsSuccess: ['listNews'],
   newsFailure: null,
-  // page2Request: ['topic', 'page'],
-  // page2Success: ['page2List'],
-  // page2Failure: null
+  page2Request: ['topic', 'page'],
+  page2Success: ['page2List'],
+  page2Failure: null
 })
 
 export const NewsTypes = Types
@@ -19,9 +19,9 @@ export default Creators
 
 export const INITIAL_STATE = Immutable({
   fetching: null,
-  // fetching2: null,
+  fetching2: null,
   listNews: [],
-  // page2List: [],
+  page2List: [],
   error: null
 })
 

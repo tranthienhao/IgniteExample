@@ -19,9 +19,9 @@ export default Creators
 
 export const INITIAL_STATE = Immutable({
   fetching: null,
-  // fetching2: null,
+  fetching2: null,
   listNews: [],
-  // page2List: [],
+  page2List: [],
   error: null
 })
 
@@ -47,19 +47,19 @@ export const success = (state, action) => {
 export const failure = state =>
   state.merge({ fetching: false, error: true, listNews: [] })
 
-// // request the data from an api
-// export const page2request = (state) =>
-//   state.merge({ fetching2: true })
+// request the data from an api
+export const page2request = (state) =>
+  state.merge({ fetching2: true })
 
-// // successful api lookup
-// export const page2success = (state, action) => {
-//   const { page2List } = action
-//   return state.merge({ fetching2: false, error: null, page2List })
-// }
+// successful api lookup
+export const page2success = (state, action) => {
+  const { page2List } = action
+  return state.merge({ fetching2: false, error: null, page2List })
+}
 
-// // Something went wrong somewhere.
-// export const page2failure = state =>
-//   state.merge({ fetching2: false, error: true, page2List: [] })
+// Something went wrong somewhere.
+export const page2failure = state =>
+  state.merge({ fetching2: false, error: true, page2List: [] })
 
 /* ------------- Hookup Reducers To Types ------------- */
 
@@ -67,7 +67,7 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.NEWS_REQUEST]: request,
   [Types.NEWS_SUCCESS]: success,
   [Types.NEWS_FAILURE]: failure,
-  // [Types.PAGE2_REQUEST]: page2request,
-  // [Types.PAGE2_SUCCESS]: page2success,
-  // [Types.PAGE2_FAILURE]: page2failure,
+  [Types.PAGE2_REQUEST]: page2request,
+  [Types.PAGE2_SUCCESS]: page2success,
+  [Types.PAGE2_FAILURE]: page2failure,
 })

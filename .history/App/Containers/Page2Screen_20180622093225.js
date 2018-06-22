@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { View, Text, FlatList, RefreshControl,TouchableWithoutFeedback } from 'react-native'
 import { connect } from 'react-redux'
 
 // Styles
-import styles from './Styles/NewsScreenStyle'
+import styles from './Styles/Page2ScreenStyle'
 
 //NewsItem
 import NewsItem from '../Components/NewsItem'
@@ -11,11 +11,11 @@ import NewsItem from '../Components/NewsItem'
 //NewsRedux
 import NewsActions from '../Redux/NewsRedux'
 
-class NewsScreen extends React.Component {
-  constructor(props){
+class Page2Screen extends Component {
+ constructor(props){
     super(props)
     this.state = {
-      topic: 1,
+      topic: 2,
       page: 1,
       listNews: this.props.listNews,
       refreshing: false
@@ -78,12 +78,12 @@ class NewsScreen extends React.Component {
           onEndReached={this.loadMore.bind(this)}
           onEndReachedThreshold= {1}
         />
-        <Text style = {styles.label}>{JSON.stringify(this.props.listNews)}</Text>
+        <Text style = {styles.label}>{JSON.stringify(this.state.page)}</Text>
       </View>
     )
   }
   componentDidMount(){
-    this.props.getNews(this.state.topic, this.state.page)
+    this.props.getNews(2, this.state.page)
     this.setState({ page: this.state.page + 1 })
   }
   componentDidUpdate(prevProps) {
@@ -95,15 +95,16 @@ class NewsScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    listNews: state.news,
+    listNews: state.news.page2List,
     fetching: state.news.fetching
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getNews: (topic, page) => dispatch(NewsActions.newsRequest(topic, page))
+    getNews: (topic, page) => dispatch(NewsActions.page2Request(topic, page)) 
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewsScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(Page2Screen)
+

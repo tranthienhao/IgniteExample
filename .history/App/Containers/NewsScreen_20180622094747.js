@@ -87,15 +87,15 @@ class NewsScreen extends React.Component {
     this.setState({ page: this.state.page + 1 })
   }
   componentDidUpdate(prevProps) {
-    if (prevProps.fetching) {
+    // if (prevProps.fetching) {
       this.setState({listNews: [...this.state.listNews, ...this.props.listNews]})
-    }
+    // }
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    listNews: state.news,
+    listNews: state.news.listNews,
     fetching: state.news.fetching
   }
 }

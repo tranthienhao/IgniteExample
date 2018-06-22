@@ -18,7 +18,7 @@ class NewsScreen extends React.Component {
       topic: 1,
       page: 1,
       listNews: this.props.listNews,
-      refreshing: false
+      refreshing: false 
     }
   }
   renderRow ({item}) {
@@ -45,7 +45,7 @@ class NewsScreen extends React.Component {
 
   oneScreensWorth = 20
 
-  loadMore(){
+  loadMore(){ 
     if (!this.props.fetching && this.props.listNews[0]){
       console.log(this.state.page)
       this.props.getNews(this.state.topic, this.state.page)
@@ -58,10 +58,10 @@ class NewsScreen extends React.Component {
     this.setState({refreshing: false})
   }
 
-  render () {
+  render () { 
     return (
       <View style={styles.container}>
-        <FlatList
+        <FlatList 
           refreshControl={ <RefreshControl
             refreshing={this.state.refreshing}
             onRefresh={this.onRefresh.bind(this)}
@@ -78,7 +78,7 @@ class NewsScreen extends React.Component {
           onEndReached={this.loadMore.bind(this)}
           onEndReachedThreshold= {1}
         />
-        <Text style = {styles.label}>{JSON.stringify(this.props.listNews)}</Text>
+        <Text style = {styles.label}>{JSON.stringify(this.state.page)}</Text>
       </View>
     )
   }
@@ -95,7 +95,7 @@ class NewsScreen extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    listNews: state.news,
+    listNews: state.news.listNews,
     fetching: state.news.fetching
   }
 }
