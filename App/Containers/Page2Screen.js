@@ -53,12 +53,41 @@ class Page2Screen extends Component {
     }
   }
   onRefresh(){
-    this.setState({refreshing: true, page: 2, listNews: []})
-    this.props.getNews(this.state.topic, 1)
-    this.setState({refreshing: false})
+    if (!this.props.fetching) {
+      this.setState({
+        page: 2,
+        listNews: [],
+        refreshing: false
+      })
+      this.props.getNews(this.state.topic, 1)
+    }
   }
 
   render () {
+    if(this.props.fetching){
+      return (
+      <View style={styles.container}>
+        <FlatList
+          refreshControl={ <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this.onRefresh.bind(this)}
+          />}
+          contentContainerStyle={styles.listContent}
+          data={this.state.listNews}
+          renderItem={this.renderRow.bind(this)}
+          keyExtractor={this.keyExtractor}
+          initialNumToRender={this.oneScreensWorth}
+          ListHeaderComponent={this.renderHeader}
+          ListFooterComponent={this.renderFooter}
+          ListEmptyComponent={this.renderEmpty}
+          ItemSeparatorComponent={this.renderSeparator}
+          onEndReached={this.loadMore.bind(this)}
+          onEndReachedThreshold= {1}
+        />
+        <Text style = {styles.loadding}>loadding...</Text>
+      </View>
+      )
+    }else{
     return (
       <View style={styles.container}>
         <FlatList
@@ -78,9 +107,9 @@ class Page2Screen extends Component {
           onEndReached={this.loadMore.bind(this)}
           onEndReachedThreshold= {1}
         />
-        <Text style = {styles.label}>{JSON.stringify(this.state.page)}</Text>
       </View>
-    )
+      )
+    }
   }
   componentDidMount(){
     this.props.getNews(2, this.state.page)

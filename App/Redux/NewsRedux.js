@@ -18,8 +18,8 @@ export default Creators
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-  fetching: null,
-  fetching2: null,
+  fetching: false,
+  fetching2: false,
   listNews: [],
   page2List: [],
   error: null
@@ -59,7 +59,7 @@ export const page2success = (state, action) => {
 
 // Something went wrong somewhere.
 export const page2failure = (state, {problem}) =>
-   state.merge({ fetching: false, error: problem, listNews: [] })
+   state.merge({ fetching2: false, error: problem, listNews: [] })
 
 /* ------------- Hookup Reducers To Types ------------- */
 

@@ -26,5 +26,10 @@ export default StyleSheet.create({
   },
   listContent: {
     marginTop: Metrics.baseMargin
+  },
+  loadding: {
+    textAlign: 'center',
+    color: '#FAFAFA',
+    backgroundColor: 'tomato'
   }
 })
